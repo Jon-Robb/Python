@@ -53,8 +53,20 @@ if __name__ == "__main__":
     btn_champ.grid(column=1, row=3)
     
     # Affecter l'appuie sur une touche à un événement 
-    root.bind('<')
+    # <ButtonPress - 1> clique cauche souris
+    # <ButtonRelease - 1> release click gauche 
+    # Appuyer sur A 
+    #   <KeyPress - a>
+    root.bind('<KeyPress-q>',partial(print, 'Clique gauche'))
+    root.bind('<KeyRelease-q>',partial(exit))
     
+    # Créer un canvas de dessin dans tkinter
+    canvas = tk.Canvas(root, background="blue", height="250", width="250")
+    canvas.create_line((10, 60), (60, 60), fill="red")
+    canvas.create_rectangle((62,60), (122, 96), fill="yellow", outline="orange")
+    
+    #Afficher canvas
+    canvas.grid(column=0, row=4)
     
     # Afficher le bouton
     button.grid(column=0, row=1)
