@@ -5,16 +5,20 @@ from tkinter.tix import TEXT
 from turtle import back
 import random
 
+
 if __name__ == "__main__":
     # Créer la fenêtre de base
     root = tk.Tk()
     
-    #fonction pour le button
+    #fonctions pour les buttons
     def foo():
         print("click")
         
     def log(texte):
         print(texte.get())    
+    
+    def translate_left():
+        print
 
     def couleur_aleatoire(label):
         couleur = "#"
@@ -42,6 +46,8 @@ if __name__ == "__main__":
     # Création d'un frame 
     frame = tk.Frame(root, bg='#aaa')
       
+    #Création d'une boucle
+    
     
     # Ajouter un bouton 
     button = tk.Button(root, text="Cliquez sur moi", command=foo)
@@ -59,6 +65,7 @@ if __name__ == "__main__":
     #   <KeyPress - a>
     root.bind('<KeyPress-q>',partial(print, 'Clique gauche'))
     root.bind('<KeyRelease-q>',partial(exit))
+    root.bind('<KeyPress-a>', )
     
     # Créer un canvas de dessin dans tkinter
     canvas = tk.Canvas(root, background="blue", height="250", width="250")
